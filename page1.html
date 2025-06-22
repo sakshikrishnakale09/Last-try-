@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>The Beginning of Us</title>
+  <style>
+    body {
+      background: #000;
+      color: white;
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3em;
+      color: pink;
+      text-shadow: 0 0 15px #ff69b4;
+    }
+    img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px pink;
+      margin: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #ff1493;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/pjmxo8.mp3" type="audio/mpeg">
+  </audio>
+  <h1>The Beginning of Us</h1>
+  <img src="https://i.ibb.co/YW0Mcyb/IMG-20240310-011748.jpg" alt="Us">
+  <button class="btn" onclick="location.href='page2.html'">Next ❤️</button>
+
+  <!-- Falling Petals -->
+  <script>
+    const numPetals = 25;
+    for (let i = 0; i < numPetals; i++) {
+      let petal = document.createElement('div');
+      petal.innerHTML = '🌸';
+      petal.style.position = 'fixed';
+      petal.style.zIndex = '1000';
+      petal.style.top = '-50px';
+      petal.style.fontSize = `${Math.random() * 24 + 18}px`;
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.animation = `fall ${Math.random() * 8 + 5}s linear infinite`;
+      document.body.appendChild(petal);
+    }
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
