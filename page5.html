@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Forever and Always</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff69b4;
+      text-shadow: 0 0 15px pink;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+    .btn {
+      margin-top: 40px;
+      padding: 12px 30px;
+      background: #ff1493;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/pjmxo8.mp3" type="audio/mpeg">
+  </audio>
+  <h1>You are my forever ❤️</h1>
+  <p>I’ll never stop loving you, not even for a second.</p>
+  <button class="btn" onclick="location.href='page1.html'">Replay 💞</button>
+
+  <!-- Falling Petals -->
+  <script>
+    const numPetals = 25;
+    for (let i = 0; i < numPetals; i++) {
+      let petal = document.createElement('div');
+      petal.innerHTML = '🌸';
+      petal.style.position = 'fixed';
+      petal.style.zIndex = '1000';
+      petal.style.top = '-50px';
+      petal.style.fontSize = `${Math.random() * 24 + 18}px`;
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.animation = `fall ${Math.random() * 8 + 5}s linear infinite`;
+      document.body.appendChild(petal);
+    }
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
