@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>If You Only Knew</title>
+  <style>
+    body {
+      background: radial-gradient(circle, #222, #000);
+      color: #fff;
+      text-align: center;
+      font-family: 'Brush Script MT', cursive;
+      padding: 50px;
+    }
+    p {
+      font-size: 2em;
+      color: #ff69b4;
+      margin-top: 20px;
+      text-shadow: 0 0 10px hotpink;
+    }
+    .btn {
+      margin-top: 50px;
+      padding: 10px 25px;
+      font-size: 18px;
+      background: #ff69b4;
+      border: none;
+      border-radius: 10px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/pjmxo8.mp3" type="audio/mpeg">
+  </audio>
+  <p>If you only knew how much I cherish you...</p>
+  <p>...you'd never stop smiling.</p>
+  <button class="btn" onclick="location.href='page5.html'">Next 💫</button>
+
+  <!-- Falling Petals -->
+  <script>
+    const numPetals = 25;
+    for (let i = 0; i < numPetals; i++) {
+      let petal = document.createElement('div');
+      petal.innerHTML = '🌸';
+      petal.style.position = 'fixed';
+      petal.style.zIndex = '1000';
+      petal.style.top = '-50px';
+      petal.style.fontSize = `${Math.random() * 24 + 18}px`;
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.animation = `fall ${Math.random() * 8 + 5}s linear infinite`;
+      document.body.appendChild(petal);
+    }
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
