@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Why I Love You</title>
+  <style>
+    body {
+      background: linear-gradient(#000, #111);
+      color: #fff;
+      text-align: center;
+      font-family: 'Georgia', cursive;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ff6ec7;
+    }
+    p {
+      font-size: 1.3em;
+      line-height: 1.6em;
+      margin-top: 20px;
+    }
+    .btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #ff1493;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    img {
+      width: 250px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px pink;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/pjmxo8.mp3" type="audio/mpeg">
+  </audio>
+  <h1>Why I Love You</h1>
+  <p>Your laugh, your voice, the way you look at me —<br>
+  every little thing about you makes my heart dance.</p>
+  <img src="https://i.ibb.co/x6Jwx9V/IMG-20240310-012114.jpg">
+  <br><button class="btn" onclick="location.href='page3.html'">Next 💕</button>
+
+  <!-- Falling Petals -->
+  <script>
+    const numPetals = 25;
+    for (let i = 0; i < numPetals; i++) {
+      let petal = document.createElement('div');
+      petal.innerHTML = '🌸';
+      petal.style.position = 'fixed';
+      petal.style.zIndex = '1000';
+      petal.style.top = '-50px';
+      petal.style.fontSize = `${Math.random() * 24 + 18}px`;
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.animation = `fall ${Math.random() * 8 + 5}s linear infinite`;
+      document.body.appendChild(petal);
+    }
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
